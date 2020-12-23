@@ -1,0 +1,138 @@
+{
+  "trips": [
+    {
+      "plannedDurationInMinutes": 61,
+      "transfers": 1,
+      "status": "CANCELLED",
+      "legs": [
+        {
+          "direction": "Den Haag Centraal",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:01:00+0100",
+            "plannedTrack": "9b",
+            "name": "Leiden Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T22:12:00+0100",
+            "plannedTrack": "10",
+            "name": "Den Haag Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        },
+        {
+          "direction": "Amersfoort Schothorst",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:25:00+0100",
+            "name": "Den Haag Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T23:02:00+0100",
+            "name": "Utrecht Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        }
+      ],
+      "shareUrl": {
+        "uri": "https://www.ns.nl/dummy1"
+      }
+    },
+    {
+      "plannedDurationInMinutes": 43,
+      "transfers": 0,
+      "status": "NORMAL",
+      "legs": [
+        {
+          "direction": "Utrecht Centraal",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:22:00+0100",
+            "plannedTrack": "2",
+            "name": "Leiden Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T23:05:00+0100",
+            "plannedTrack": "11",
+            "name": "Utrecht Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        }
+      ],
+      "shareUrl": {
+        "uri": "https://www.ns.nl/dummy2"
+      }
+    },
+    {
+      "plannedDurationInMinutes": 61,
+      "transfers": 1,
+      "status": "NORMAL",
+      "legs": [
+        {
+          "direction": "Den Haag Centraal",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:31:00+0100",
+            "plannedTrack": "9b",
+            "name": "Leiden Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T22:42:00+0100",
+            "plannedTrack": "9",
+            "name": "Den Haag Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        },
+        {
+          "direction": "Enschede",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:55:00+0100",
+            "plannedTrack": "5",
+            "name": "Den Haag Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T23:32:00+0100",
+            "plannedTrack": "12",
+            "name": "Utrecht Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        }
+      ],
+      "shareUrl": {
+        "uri": "https://www.ns.nl/dummy3"
+      }
+    },
+    {
+      "plannedDurationInMinutes": 43,
+      "transfers": 0,
+      "status": "NORMAL",
+      "legs": [
+        {
+          "direction": "Utrecht Centraal",
+          "origin": {
+            "plannedDateTime": "2019-02-25T22:52:00+0100",
+            "plannedTrack": "1",
+            "name": "Leiden Centraal"
+          },
+          "destination": {
+            "plannedDateTime": "2019-02-25T23:35:00+0100",
+            "plannedTrack": "11",
+            "name": "Utrecht Centraal"
+          },
+          "product": {
+            "longCategoryName": "Intercity"
+          }
+        }
+      ],
+      "shareUrl": {
+        "uri": "https://www.ns.nl/dummy4"
+      }
+    }
+  ]
+}
