@@ -14,15 +14,20 @@ Alfred workflow for getting NS Train schedule.
 Project uses standard Python 2.7 shipped with all modern OSX distributions. No dependencies are required for running the
 workflow.
 
+⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it as workflow environment variable NS_APIKEY during
+the installation.
+
 ### Installing
 
 Download `NS_Schedule.alfredworkflow` file from the latest release
 at [Releases](https://github.com/artemy/alfred-ns-schedule/releases) page and open it with Alfred.
+Change the value of NS_APIKEY variable to the value you've received from NS at the _Prerequisites_ step.
 
 ### How to Use
 
-Open Alfred and type `ns` and names of two train stations you want to see schedule for. Workflow will display list of upcoming trains for the route you have specified.
-Pressing `Enter` on a displayed item will open it on NS website, so you can get more details.
+Open Alfred and type `ns` and names of two train stations you want to see schedule for. Workflow will display list of
+upcoming trains for the route you have specified. Pressing `Enter` on a displayed item will open it on NS website, so
+you can get more details.
 
 ![animation](.readme/images/animation.gif)
 
