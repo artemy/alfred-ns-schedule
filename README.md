@@ -11,8 +11,8 @@ Alfred workflow for getting NS Train schedule.
 
 ### Prerequisites
 
-Project uses standard Python 2.7 shipped with all modern OSX distributions. No dependencies are required for running the
-workflow.
+Project requires Python 3.8+ to run, which is not included by default with macOS. You can install Python 3 using
+this [guide](https://docs.python-guide.org/starting/install3/osx/).
 
 ⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it as workflow environment variable NS_APIKEY during
 the installation.
@@ -36,13 +36,13 @@ you can get more details.
 Make sure to first install test dependencies:
 
 ```shell
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 To run tests, execute
 
 ```shell
-python -m ns_schedule_test
+python3 -m ns_schedule_test
 ```
 
 If you want to get coverage figures through `coverage` tool:
@@ -54,9 +54,8 @@ coverage report -m # display coverage figures
 
 ## Built With
 
-* [Python 2.7](https://docs.python.org/2.7/)
+* [Python 3.8](https://docs.python.org/3.8/)
 * [GNU Make](https://www.gnu.org/software/make/manual/make.html) - Build scripting
-* [mock](https://mock.readthedocs.org/) - Testing library
 * [coverage.py](https://coverage.readthedocs.io/) - Code coverage measurement
 
 ## Contributing

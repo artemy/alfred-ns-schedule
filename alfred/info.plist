@@ -58,7 +58,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python ns_schedule.py "{query}"</string>
+				<string>python3 ns_schedule.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -125,7 +125,7 @@ Make sure to get API key from https://apiportal.ns.nl/ and set it as workflow en
 		<string>FILLME</string>
 	</dict>
 	<key>version</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/artemy/alfred-ns-schedule</string>
 </dict>

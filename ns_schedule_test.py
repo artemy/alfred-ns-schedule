@@ -1,7 +1,8 @@
 import unittest
-import urllib2
-
-import mock
+import urllib.error
+import urllib.parse
+import urllib.request
+from unittest import mock
 
 from ns_schedule import create_json, create_headers, retrieve_schedule
 
@@ -20,8 +21,8 @@ class Unittests(unittest.TestCase):
         self.assertEqual(expected, retrieve_schedule())
 
     def test_create_json(self):
-        expected = '{"items": [{"arg": "http://example.com", "subtitle": "Sub1", "title": "Title1"}, ' \
-                   '{"arg": "http://dummy.host", "subtitle": "Sub2", "title": "Title2"}]}'
+        expected = '{"items": [{"title": "Title1", "subtitle": "Sub1", "arg": "http://example.com"}, ' \
+                   '{"title": "Title2", "subtitle": "Sub2", "arg": "http://dummy.host"}]}'
         self.assertEqual(expected, create_json([{"title": "Title1", "subtitle": "Sub1", "arg": "http://example.com"},
                                                 {"title": "Title2", "subtitle": "Sub2", "arg": "http://dummy.host"}]))
 
@@ -44,7 +45,7 @@ class Unittests(unittest.TestCase):
     @mock.patch("sys.argv", ["main", "Foo Bar"])
     def test_happyflow(self):
         with open('testdata/happyflow.json') as json_file:
-            with mock.patch('urllib2.urlopen') as urlopen_mock:
+            with mock.patch('urllib.request.urlopen') as urlopen_mock:
                 mock_response = urlopen_mock.return_value
                 mock_response.read.return_value = json_file.read()
                 expected = [{
@@ -66,7 +67,7 @@ class Unittests(unittest.TestCase):
     @mock.patch("sys.argv", ["main", "Foo Bar"])
     def test_happyflow_cancelled(self):
         with open('testdata/cancelled.json') as json_file:
-            with mock.patch('urllib2.urlopen') as urlopen_mock:
+            with mock.patch('urllib.request.urlopen') as urlopen_mock:
                 mock_response = urlopen_mock.return_value
                 mock_response.read.return_value = json_file.read()
                 expected = [{
@@ -88,17 +89,17 @@ class Unittests(unittest.TestCase):
     @mock.patch("sys.argv", ["main", "Foo Bar"])
     def test_malformed_json(self):
         with open('testdata/malformed.json') as json_file:
-            with mock.patch('urllib2.urlopen') as urlopen_mock:
+            with mock.patch('urllib.request.urlopen') as urlopen_mock:
                 mock_response = urlopen_mock.return_value
                 mock_response.read.return_value = json_file.read()
                 expected = [{"title": "Can\'t parse server response"}]
                 self.assertEqual(expected, retrieve_schedule())
 
-    @mock.patch('urllib2.urlopen')
+    @mock.patch('urllib.request.urlopen')
     @mock.patch("os.environ", {'NS_APIKEY': 'Foo'})
     @mock.patch("sys.argv", ["main", "Foo Bar"])
     def test_bad_request(self, urlopen_mock):
-        urlopen_mock.side_effect = urllib2.HTTPError(*[None] * 5)
+        urlopen_mock.side_effect = urllib.error.HTTPError(*[None] * 5)
         expected = [{"title": "Error contacting server"}]
         self.assertEqual(expected, retrieve_schedule())
 
