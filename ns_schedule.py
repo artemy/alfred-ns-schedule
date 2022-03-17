@@ -1,9 +1,10 @@
 import json
 import os
 import sys
-import urllib2
+import urllib.error
+import urllib.parse
+import urllib.request
 from datetime import datetime
-from urllib import urlencode
 
 
 class NoArgsError(Exception):
@@ -23,11 +24,11 @@ def create_headers():
 
 
 def call_api(origin, destination):
-    params = urlencode({'fromStation': origin, 'toStation': destination})
+    params = urllib.parse.urlencode({'fromStation': origin, 'toStation': destination})
     url = 'https://gateway.apiportal.ns.nl/reisinformatie-api/api/v3/trips?' + params
 
-    req = urllib2.Request(url, headers=create_headers())
-    response = urllib2.urlopen(req)
+    req = urllib.request.Request(url, headers=create_headers())
+    response = urllib.request.urlopen(req)
     return json.loads(response.read())
 
 
@@ -46,8 +47,7 @@ def duration(time):
 
 
 def format_date(date):
-    date = date[:-5]  # trim timezone since python 2 doesn't support full ISO notation
-    return datetime.strptime(date, '%Y-%m-%dT%H:%M:%S').strftime('%H:%M')
+    return datetime.strptime(date, '%Y-%m-%dT%H:%M:%S%z').strftime('%H:%M')
 
 
 def create_title(trip):
@@ -105,7 +105,7 @@ def retrieve_schedule():
         return [{'title': 'Please provide origin and destination stations'}]
     except ValueError:
         return [{'title': 'Can\'t parse server response'}]
-    except urllib2.HTTPError:
+    except urllib.error.HTTPError:
         return [{'title': 'Error contacting server'}]
 
 
@@ -114,7 +114,7 @@ def create_json(items):
 
 
 def main():  # pragma: nocover
-    print(create_json(retrieve_schedule()))
+    print((create_json(retrieve_schedule())))
 
 
 if __name__ == '__main__':  # pragma: nocover
