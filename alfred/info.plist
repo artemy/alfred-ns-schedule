@@ -58,15 +58,15 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python3 ns_schedule.py "{query}"</string>
+				<string>python3 ns_schedule.py "${1}"</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string>ns-go</string>
 				<key>subtext</key>
-				<string></string>
+				<string>Type two station names to see train schedule between them</string>
 				<key>title</key>
-				<string></string>
+				<string>NS Train Schedule</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -84,12 +84,14 @@
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
@@ -101,31 +103,55 @@
 	</array>
 	<key>readme</key>
 	<string>Type `ns` and two station names to see train schedule between them.
-Make sure to get API key from https://apiportal.ns.nl/ and set it as workflow environment variable NS_APIKEY</string>
+
+![](screenshot.png)
+
+Be sure to [get an API Key](https://apiportal.ns.nl/) and set it in the user configuration.</string>
 	<key>uidata</key>
 	<dict>
 		<key>50B0CD10-4D52-4898-9C05-DD3A34A829C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>70</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
 		<key>F557B5A7-3204-496A-BF87-0071C484E895</key>
 		<dict>
 			<key>xpos</key>
-			<integer>560</integer>
+			<real>560</real>
 			<key>ypos</key>
-			<integer>50</integer>
+			<real>50</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>NS_APIKEY</key>
-		<string>FILLME</string>
-	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Request one at https://apiportal.ns.nl/</string>
+			<key>label</key>
+			<string>API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>NS_APIKEY</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>2.0</string>
+	<string>2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/artemy/alfred-ns-schedule</string>
 </dict>

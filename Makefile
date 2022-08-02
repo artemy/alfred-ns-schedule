@@ -1,6 +1,6 @@
 NS_SCHEDULE_PY=ns_schedule.py
 ALFRED_FILE_NAME=NS_Schedule
-ALFRED_PACKAGE_FILES=./alfred/*
+ALFRED_PACKAGE_FILES=./alfred/* .readme/images/screenshot.png
 
 .PHONY: clean test build
 
