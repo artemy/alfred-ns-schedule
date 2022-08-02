@@ -7,7 +7,7 @@ ALFRED_PACKAGE_FILES=./alfred/* .readme/images/screenshot.png
 all: clean build
 
 clean:
-	rm -fr out *.alfredworkflow
+	rm -fr out *.alfred5workflow
 
 build:
-	zip -j -r $(ALFRED_FILE_NAME).alfredworkflow $(ALFRED_PACKAGE_FILES) $(NS_SCHEDULE_PY)
+	zip -j -r $(ALFRED_FILE_NAME).alfred5workflow $(ALFRED_PACKAGE_FILES) $(NS_SCHEDULE_PY)

@@ -2,6 +2,7 @@
 .idea
 venv
 *.alfredworkflow
+*.alfred5workflow
 htmlcov
 .coverage
 coverage.xml

@@ -1,4 +1,4 @@
-# NS (Nederlandse Spoorwegen) Train schedule for Alfred
+# NS (Nederlandse Spoorwegen) Train schedule for Alfred 5
 
 ![test & release](https://github.com/artemy/alfred-ns-schedule/workflows/test%20&%20release/badge.svg)
 ![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
@@ -9,17 +9,19 @@ Alfred workflow for getting NS Train schedule.
 
 ## Getting started
 
+⚠️ This workflow requires [Alfred 5](https://www.alfredapp.com/alfred-5-whats-new/). 
+Alfred 4 users can use [version 2.0](https://github.com/artemy/alfred-ns-schedule/releases/tag/v2.0) of the workflow.
+
 ### Prerequisites
 
 Project requires Python 3.8+ to run, which is not included by default with macOS. You can install Python 3 using
 this [guide](https://docs.python-guide.org/starting/install3/osx/).
 
-⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it as workflow environment variable NS_APIKEY during
-the installation.
+⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it in a user configuration of the workflow.
 
 ### Installing
 
-Download `NS_Schedule.alfredworkflow` file from the latest release
+Download `NS_Schedule.alfred5workflow` file from the latest release
 at [Releases](https://github.com/artemy/alfred-ns-schedule/releases) page and open it with Alfred.
 Change the value of NS_APIKEY variable to the value you've received from NS at the _Prerequisites_ step.
 
