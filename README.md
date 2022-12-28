@@ -9,7 +9,7 @@ Alfred workflow for getting NS Train schedule.
 
 ## Getting started
 
-⚠️ This workflow requires [Alfred 5](https://www.alfredapp.com/alfred-5-whats-new/). 
+⚠️ This workflow requires [Alfred 5](https://www.alfredapp.com/alfred-5-whats-new/).
 Alfred 4 users can use [version 2.0](https://github.com/artemy/alfred-ns-schedule/releases/tag/v2.0) of the workflow.
 
 ### Prerequisites
@@ -32,6 +32,8 @@ upcoming trains for the route you have specified. Pressing `Enter` on a displaye
 you can get more details.
 
 ![animation](.readme/images/animation.gif)
+
+> ⚠️ For places with names consisting of multiple words, use `_` (underscore) instead of space inside the name, e.g. for trains between Den Haag Centraal and Amsterdam Bijlmer Arena type `den_haag_centraal amsterdam_bijlmer_arena`
 
 ## Running the tests
 

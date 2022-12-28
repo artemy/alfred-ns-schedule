@@ -87,7 +87,7 @@ def extract_arguments():
     try:
         args = sys.argv[1].split(' ')
         if len(args) == 2:
-            return args
+            return [x.replace('_', ' ') for x in args]
         raise IndexError
     except IndexError:
         raise NoArgsError
