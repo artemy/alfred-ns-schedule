@@ -4,7 +4,7 @@ import urllib.parse
 import urllib.request
 from unittest import mock
 
-from ns_schedule import create_json, create_headers, retrieve_schedule
+from ns_schedule import create_json, create_headers, retrieve_schedule, extract_arguments
 
 
 class Unittests(unittest.TestCase):
@@ -102,6 +102,11 @@ class Unittests(unittest.TestCase):
         urlopen_mock.side_effect = urllib.error.HTTPError(*[None] * 5)
         expected = [{"title": "Error contacting server"}]
         self.assertEqual(expected, retrieve_schedule())
+
+    @mock.patch("sys.argv", ["main", "Den_Haag_Centraal Amsterdam_Centraal"])
+    def test_argument_parsing(self):
+        expected = ["Den Haag Centraal", "Amsterdam Centraal"]
+        self.assertEqual(extract_arguments(), expected)
 
 
 if __name__ == '__main__':  # pragma: nocover
