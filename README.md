@@ -18,6 +18,7 @@ Project requires Python 3.8+ to run, which is not included by default with macOS
 this [guide](https://docs.python-guide.org/starting/install3/osx/).
 
 ⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it in a user configuration of the workflow.
+Subscribe to the product [NS-App](https://apiportal.ns.nl/product#product=NsApp). 
 
 ### Installing
 
@@ -27,13 +28,11 @@ Change the value of NS_APIKEY variable to the value you've received from NS at t
 
 ### How to Use
 
-Open Alfred and type `ns` and names of two train stations you want to see schedule for. Workflow will display list of
+Open Alfred and type `ns` and names of the origin station followed by the destination station you want to see schedule for. Workflow will display list of
 upcoming trains for the route you have specified. Pressing `Enter` on a displayed item will open it on NS website, so
 you can get more details.
 
 ![animation](.readme/images/animation.gif)
-
-> ⚠️ For places with names consisting of multiple words, use `_` (underscore) instead of space inside the name, e.g. for trains between Den Haag Centraal and Amsterdam Bijlmer Arena type `den_haag_centraal amsterdam_bijlmer_arena`
 
 ## Running the tests
 
