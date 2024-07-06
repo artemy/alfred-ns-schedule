@@ -17,7 +17,7 @@ Alfred 4 users can use [version 2.0](https://github.com/artemy/alfred-ns-schedul
 Project requires Python 3.8+ to run, which is not included by default with macOS. You can install Python 3 using
 this [guide](https://docs.python-guide.org/starting/install3/osx/).
 
-⚠️ Make sure to get API key from https://apiportal.ns.nl/ and set it in a user configuration of the workflow.
+⚠️ Make sure to get an API key from https://apiportal.ns.nl/ and set it in a user configuration of the workflow.
 Subscribe to the product [NS-App](https://apiportal.ns.nl/product#product=NsApp). 
 
 ### Installing
@@ -28,8 +28,12 @@ Change the value of NS_APIKEY variable to the value you've received from NS at t
 
 ### How to Use
 
-Open Alfred and type `ns` and names of the origin station followed by the destination station you want to see schedule for. Workflow will display list of
-upcoming trains for the route you have specified. Pressing `Enter` on a displayed item will open it on NS website, so
+1. Open Alfred
+2. Type `ns` and the name of the origin station, confirm origin station choice by pressing "Enter"
+3. Type the name of the destination station, confirm destination station choice by pressing "Enter".
+
+Workflow will display a list of
+upcoming trains for the route you have specified. Pressing `Enter` on a schedule item will open it on NS website in your default browser, where
 you can get more details.
 
 ![animation](.readme/images/animation.gif)
@@ -67,7 +71,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License — see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
