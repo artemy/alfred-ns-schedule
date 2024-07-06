@@ -1,7 +1,7 @@
 # NS (Nederlandse Spoorwegen) Train schedule for Alfred 5
 
 ![test & release](https://github.com/artemy/alfred-ns-schedule/workflows/test%20&%20release/badge.svg)
-![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
+![MIT License](https://img.shields.io/github/license/artemy/alfred-ns-schedule)
 
 Alfred workflow for getting NS Train schedule.
 
