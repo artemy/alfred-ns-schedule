@@ -147,7 +147,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Destination station</string>
+				<string>Please provide destination station</string>
 				<key>withspace</key>
 				<true/>
 			</dict>

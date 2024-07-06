@@ -83,9 +83,19 @@ def new_item_from_trip(trip):
             'arg': trip['shareUrl']['uri']}
 
 
+def extract_arguments():
+    try:
+        if len(sys.argv) == 3:
+            if sys.argv[1] and sys.argv[2]:
+                return sys.argv[1], sys.argv[2]
+        raise IndexError
+    except IndexError:
+        raise NoArgsError
+
+
 def retrieve_schedule():
     try:
-        (origin, destination) = sys.argv[1], sys.argv[2]
+        (origin, destination) = extract_arguments()
 
         response = call_api(origin, destination)
         return [new_item_from_trip(trip) for trip in response['trips']]

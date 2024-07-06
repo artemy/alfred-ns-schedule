@@ -15,7 +15,7 @@ class Unittests(unittest.TestCase):
         self.assertEqual(expected, create_headers())
 
     @mock.patch("os.environ", {})
-    @mock.patch("sys.argv", ["main", "Foo Bar"])
+    @mock.patch("sys.argv", ["main", "Foo", "Bar"])
     def test_no_api_key(self):
         expected = [{'title': 'Please specify API key in settings'}]
         self.assertEqual(expected, retrieve_schedule())
@@ -42,7 +42,7 @@ class Unittests(unittest.TestCase):
         self.assertEqual(expected, retrieve_schedule())
 
     @mock.patch("os.environ", {'NS_APIKEY': 'Foo'})
-    @mock.patch("sys.argv", ["main", "Foo Bar"])
+    @mock.patch("sys.argv", ["main", "Foo", "Bar"])
     def test_happyflow(self):
         with open('testdata/happyflow.json') as json_file:
             with mock.patch('urllib.request.urlopen') as urlopen_mock:
@@ -64,7 +64,7 @@ class Unittests(unittest.TestCase):
                 self.assertEqual(expected, retrieve_schedule())
 
     @mock.patch("os.environ", {'NS_APIKEY': 'Foo'})
-    @mock.patch("sys.argv", ["main", "Foo Bar"])
+    @mock.patch("sys.argv", ["main", "Foo", "Bar"])
     def test_happyflow_cancelled(self):
         with open('testdata/cancelled.json') as json_file:
             with mock.patch('urllib.request.urlopen') as urlopen_mock:
@@ -86,7 +86,7 @@ class Unittests(unittest.TestCase):
                 self.assertEqual(expected, retrieve_schedule())
 
     @mock.patch("os.environ", {'NS_APIKEY': 'Foo'})
-    @mock.patch("sys.argv", ["main", "Foo Bar"])
+    @mock.patch("sys.argv", ["main", "Foo", "Bar"])
     def test_malformed_json(self):
         with open('testdata/malformed.json') as json_file:
             with mock.patch('urllib.request.urlopen') as urlopen_mock:
@@ -97,15 +97,15 @@ class Unittests(unittest.TestCase):
 
     @mock.patch('urllib.request.urlopen')
     @mock.patch("os.environ", {'NS_APIKEY': 'Foo'})
-    @mock.patch("sys.argv", ["main", "Foo Bar"])
+    @mock.patch("sys.argv", ["main", "Foo", "Bar"])
     def test_bad_request(self, urlopen_mock):
         urlopen_mock.side_effect = urllib.error.HTTPError(*[None] * 5)
         expected = [{"title": "Error contacting server"}]
         self.assertEqual(expected, retrieve_schedule())
 
-    @mock.patch("sys.argv", ["main", "Den_Haag_Centraal Amsterdam_Centraal"])
+    @mock.patch("sys.argv", ["main", "Den Haag Centraal", "Amsterdam Centraal"])
     def test_argument_parsing(self):
-        expected = ["Den Haag Centraal", "Amsterdam Centraal"]
+        expected = ("Den Haag Centraal", "Amsterdam Centraal")
         self.assertEqual(extract_arguments(), expected)
 
 
